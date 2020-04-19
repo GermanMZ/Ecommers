@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import * as WC from 'woocommerce-api';
+import { ProductsByCategoryPage } from '../products-by-category/products-by-category'
 
 @Component({
   selector: 'page-menu',
@@ -9,7 +10,7 @@ import * as WC from 'woocommerce-api';
 })
 export class MenuPage {
   homePage : any
-  categories : any[];
+  categories : any = [];
 
   WooCommerce: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -22,16 +23,31 @@ export class MenuPage {
     })
     
     this.WooCommerce.getAsync("products/categories").then((data) => {
-       console.log(JSON.parse(data.body).product_categories); 
+      // console.log(JSON.parse(data.body).product_categories); 
        
-        
        let temp: any[] = JSON.parse(data.body).product_categories;
-       for (let i = 0; i < temp.length; i++){
-         
-        if(temp[i].parent == 0 ){
 
-          this.categories[i].push(temp[i]) ;
-         } 
+      
+
+       for (let i = 0; i < temp.length; i++){
+        
+        if(temp[i].parent == 0 ){
+            
+            if(temp[i].name == "Ropa"){
+                  temp[i].icon = "shirt";
+            }
+
+            if(temp[i].name == "Zapatos"){
+                  temp[i].icon = "shirt";    
+            }
+
+            if(temp[i].name == "Musica"){
+              temp[i].icon = "musical-notes";
+            }
+
+            this.categories.push(temp[i])
+         }
+          
        }
 
 
@@ -45,6 +61,12 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  openCategoryPage(category){
+
+   this.navCtrl.setRoot(ProductsByCategoryPage, { "category": category});
+
   }
 
 }
