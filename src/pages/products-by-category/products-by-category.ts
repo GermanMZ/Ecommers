@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import * as WC from 'woocommerce-api';
+import { ProductDetailsPage } from '../product-details/product-details'
 
 @Component({
   selector: 'page-products-by-category',
@@ -39,10 +40,23 @@ export class ProductsByCategoryPage {
   
   loadMoreProducts(event){
     this.page++;
-    
-    this.WooCommerce.getAsync("products?filter[category]="+this.category )
+    console.log("Getttin page" + this.page)
+    this.WooCommerce.getAsync("products?filter[category]="+this.category.name + "page=" +this.page).then(( data ) => {
+       let temp =(JSON.parse(data.body).products);
 
+       this.products = this.products.concat(JSON.parse(data.body).products)
+       
+       event.complete();
+
+       if(temp.length < 10)
+          event.enable(false);
+
+      })  
   }
-  
 
+  openProductPage(product){
+    this.navCtrl.push(ProductDetailsPage, {"product":product})
+  
+ }
+  
 }

@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides, ToastController } from 'ionic-angular';
 //import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ProductDetailsPage} from '../product-details/product-details'; 
+
 import * as WC from 'woocommerce-api'
 
 @Component({
@@ -81,6 +83,11 @@ export class HomePage {
   }, (err)=> {
      console.log(err);
   })
+
+}
+
+openProductPage(product){
+   this.navCtrl.push(ProductDetailsPage, {"product":product})
 
 }
 
