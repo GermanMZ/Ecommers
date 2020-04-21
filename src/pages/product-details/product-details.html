@@ -4,7 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <ion-fab right top edge (click)="openCart()">
+    <button ion-fab color="danger"> <ion-icon name="cart"></ion-icon> </button>
+  </ion-fab>
   
   <ion-card>
     <ion-slides autoplay="3000" >
@@ -23,8 +27,8 @@
     
     <p [innerHTML]="product.description"></p>
 
-    <button ion-button icon-left block outline color="danger">
-      <ion-icon name="basket"></ion-icon> Add To Card
+    <button ion-button icon-left block outline color="danger" (click)="AddToCart(product)">
+      <ion-icon name="basket"></ion-icon> Add to Card for $ {{ product.price  }}
     </button>
     
 

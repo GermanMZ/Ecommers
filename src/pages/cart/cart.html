@@ -1,0 +1,27 @@
+
+<ion-header>
+
+
+  <ion-navbar>
+    <ion-title>Tu carrito</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+<ion-list>
+ <ion-item *ngFor="let item of cartItems; let i = index">
+  
+  <ion-thumbnail item-left>
+   <img [src]="item.product.featured_src" style="width: 60px !important; height: 60px !important;"/>
+  </ion-thumbnail>
+  <h2> {{ item.product.title }}</h2>
+  <p> {{ item.qty }} * {{ item.product.price }}</p>
+   <button ion-button clear item-right color="danger" > 
+     <ion-icon name="close-circle" ></ion-icon>
+   </button>
+ </ion-item>
+</ion-list>
+</ion-content> 
