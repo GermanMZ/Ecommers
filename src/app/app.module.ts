@@ -9,7 +9,10 @@ import { ProductsByCategoryPage} from '../pages/products-by-category/products-by
 import { ProductDetailsPage } from '../pages/product-details/product-details' 
 import { IonicStorageModule} from '@ionic/storage';
 import { CartPage } from '../pages/cart/cart'
+import { SignupPage} from '../pages/signup/signup'
 import { StatusBar } from '@ionic-native/status-bar';
+import { LoginPage} from '../pages/login/login'
+import { HttpClientModule }  from '@angular/common/http';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
@@ -20,12 +23,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProductsByCategoryPage,
     ProductDetailsPage,
     CartPage,
+    SignupPage,
+    LoginPage,
+    
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,10 +42,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProductsByCategoryPage,
     ProductDetailsPage,
     CartPage,
+    SignupPage,
+    LoginPage,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    LoginPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
