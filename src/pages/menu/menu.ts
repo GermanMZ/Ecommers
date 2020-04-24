@@ -56,7 +56,7 @@ export class MenuPage {
 
 
     }, (err) => {
-        console.log(err);
+        console.log('error while trying get categories', err);
     })
   
   
