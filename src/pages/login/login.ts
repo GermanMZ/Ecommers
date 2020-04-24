@@ -37,7 +37,7 @@ export class LoginPage {
           return;
         }
           
-          this.storage.set("userLoginInfo", data).then( (response)=>{
+          this.storage.set("userLoginInfo", datos).then( (response)=>{
                   
                     this.AlertCtrl.create({
                       title: "Login Successful",
@@ -55,11 +55,7 @@ export class LoginPage {
                     }).present();   
                       
           }) 
-          
-
-    
-       
-       }, error =>  { console.log(error) });
+       });
        
 
   }
