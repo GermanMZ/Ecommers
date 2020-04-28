@@ -22,16 +22,17 @@ export class HomePage {
     
     this.page = 1;
     
-    this.WooCommerce = WC({
-      url: "http://localhost/wordpress",
-      consumerKey: "ck_20f930d406870a1825a1bc34f0fc1356ced05343",
-      consumerSecret: "cs_9d17148181d449f2cccd7300c23985f89e5a89be"  
-    })
-
     
+    this.WooCommerce = WC({
+      url: "http://34.125.61.0.xip.io",
+      consumerKey: "ck_25746e9a2f9a7ca011c8403a1ce248efee77f1bc",
+      consumerSecret: "cs_8f1f9dfcc20420e837d2453fd9d67c8120a7d379"  
+ })
+
+
     this.loadMoreProducts(null);
     this.WooCommerce.getAsync("products").then((response)=> {
-        
+       
         this.products = JSON.parse(response.body).products;
     }, (err)=> {
        console.log(err);
@@ -69,8 +70,7 @@ export class HomePage {
       }
 
       if(JSON.parse(response.body).products.length < 10){
-        event.enable(false);
-
+       // event.enable(false);
         this.toastCtrl.create({
           message: "No hay mas productos!",
           duration: 5000

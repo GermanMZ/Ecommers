@@ -22,10 +22,10 @@ export class ProductDetailsPage {
      console.log(this.product);
 
      this.WooCommerce = WC({
-      url: "http://localhost/wordpress",
-      consumerKey: "ck_20f930d406870a1825a1bc34f0fc1356ced05343",
-      consumerSecret: "cs_9d17148181d449f2cccd7300c23985f89e5a89be"  
-    })
+      url: "http://34.125.61.0.xip.io",
+      consumerKey: "ck_25746e9a2f9a7ca011c8403a1ce248efee77f1bc",
+      consumerSecret: "cs_8f1f9dfcc20420e837d2453fd9d67c8120a7d379"  
+ })
 
 
     this.WooCommerce.getAsync('products/'+this.product.id +'/reviews').then((data)=> {

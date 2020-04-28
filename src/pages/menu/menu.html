@@ -22,12 +22,14 @@
        <p>{{ category.description}}</p>
       </ion-item>
 
-    <ion-item-divider color="danger">Cuenta</ion-item-divider>
+<!--      
+   <ion-item-divider color="danger">Cuenta</ion-item-divider>
     <ion-item (click)="openPage('signup')" menuClose *ngIf="!loggedIn">
       <ion-icon name="md-clipboard" item-left large> </ion-icon>
       <h2>Sing Up</h2>
       <p>Crear una nueva cuenta</p>
-    </ion-item>
+    </ion-item> 
+  -->  
    
     <ion-item (click)="openPage('login')" menuClose *ngIf="!loggedIn">
       <ion-icon name="log-in" item-left large> </ion-icon>

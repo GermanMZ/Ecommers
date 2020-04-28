@@ -19,10 +19,11 @@ export class SignupPage {
       this.billing_shopping_same = false;
 
       this.WooCommerce = WC({
-        url: "http://localhost/wordpress",
-        consumerKey: "ck_20f930d406870a1825a1bc34f0fc1356ced05343",
-        consumerSecret: "cs_9d17148181d449f2cccd7300c23985f89e5a89be",
-      })
+        url: "http://35.235.80.250",
+        consumerKey: "ck_090680bec7173852f4eb037ad21097a309988932",
+        consumerSecret: "cs_63cceb58cc951ef2afb21049d6278c7be8503eac"  
+   })
+  
 
     
   
