@@ -1,0 +1,50 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-divider color="primary">Perfil</ion-item-divider>
+  <ion-card style="margin: 0px; border: none; width: 50%;">
+    <img src="../../assets//images/user.png" style="width: 70%; margin: auto; padding: 20px; "/>
+  </ion-card>
+  
+  <ion-list>
+    <ion-item>
+      <ion-label floating>DPI</ion-label>
+      <ion-input type="text" [(ngModel)]="dpi"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="texto" [(ngModel)]="Nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label >Fecha</ion-label>
+      <ion-input type="date" [(ngModel)]='Fecha'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Correo</ion-label>
+      <ion-input type="Texto" [(ngModel)]="Correo"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label floating>Rol</ion-label>
+      <ion-input type="text" [(ngModel)]="Rol"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Permisos</ion-label>
+      <ion-input type="text" [(ngModel)]="permisos"></ion-input>
+    </ion-item>
+    
+  </ion-list>  
+  <button ion-button block color="danger" (click)="Actualizar()">Actualizar</button>
+  
+</ion-content>

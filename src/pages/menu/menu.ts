@@ -7,6 +7,7 @@ import { SignupPage } from '../signup/signup';
 import { LoginPage } from '../login/login';
 import { Storage }  from '@ionic/storage';
 import { CartPage } from '../cart/cart';
+import { PerfilPage } from '../perfil/perfil'
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
@@ -101,7 +102,9 @@ export class MenuPage {
       this.storage.remove("userLoginInfo").then( () =>{
         this.user = {};
         this.loggedIn =false;
-      }) 
+      })
+    }else if(pageName == 'perfil'){   
+      this.navCtrl.push(PerfilPage);
     }else if(pageName == "cart"){
         let modal = this.modalCtrl.create(CartPage);
         modal.present();   

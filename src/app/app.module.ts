@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { LoginPage} from '../pages/login/login'
 import { HttpClientModule }  from '@angular/common/http';
 import { CheckoutPage } from '../pages/checkout/checkout'
+import { PerfilPage } from '../pages/perfil/perfil'
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     LoginPage,
     CheckoutPage,
+    PerfilPage,
     
     
   ],
@@ -47,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     LoginPage,
     CheckoutPage,
+    PerfilPage,
     
   ],
   providers: [

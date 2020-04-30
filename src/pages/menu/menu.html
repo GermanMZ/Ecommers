@@ -22,22 +22,32 @@
        <p>{{ category.description}}</p>
       </ion-item>
 
-<!--      
-   <ion-item-divider color="danger">Cuenta</ion-item-divider>
-    <ion-item (click)="openPage('signup')" menuClose *ngIf="!loggedIn">
+
+
+
+      
+   <ion-item-divider   color="danger">Cuenta</ion-item-divider>
+    <ion-item (click)="openPage('signup')" menuClose *ngIf="loggedIn">
       <ion-icon name="md-clipboard" item-left large> </ion-icon>
       <h2>Sing Up</h2>
       <p>Crear una nueva cuenta</p>
     </ion-item> 
-  -->  
    
+   
+   
+
     <ion-item (click)="openPage('login')" menuClose *ngIf="!loggedIn">
       <ion-icon name="log-in" item-left large> </ion-icon>
       <h2>Login</h2>
       <p>Usa un Email y password</p>
     </ion-item>
      
-    <ion-item  *ngIf="loggedIn" menuClose  >
+    <ion-item  *ngIf="loggedIn" menuClose  (click)="openPage('perfil')"  >
+      <ion-icon name = "ios-contact-outline" item-left large ></ion-icon>
+      <h2>Perfil</h2>
+    </ion-item>
+
+    <ion-item   *ngIf="loggedIn" menuClose  >
       <ion-icon name = "contact" item-left large ></ion-icon>
       <h2>{{ (this.user.firstname =='' ? this.user.username : this.user.firstname) || "" }}</h2>
     <p>Bienvenido</p>

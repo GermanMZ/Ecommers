@@ -24,7 +24,7 @@ export class LoginPage {
   Login(){
 
       this.http.get("http://34.125.61.0.xip.io/api/auth/generate_auth_cookie/?insecure=cool&username=" +this.username +"&password="+this.password)
-      .subscribe(   (data)  =>{
+      .subscribe((data)=>{
               
         let  datos =  JSON.parse((JSON.stringify(data)));
            
@@ -52,8 +52,7 @@ export class LoginPage {
                             }
                           }
                       }]
-                    }).present();   
-                      
+                    }).present();            
           }) 
        });
        

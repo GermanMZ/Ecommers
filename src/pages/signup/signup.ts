@@ -24,8 +24,6 @@ export class SignupPage {
         consumerSecret: "cs_63cceb58cc951ef2afb21049d6278c7be8503eac"  
    })
   
-
-    
   
   }
 
@@ -138,9 +136,7 @@ export class SignupPage {
            }).present();
         }
 
-
       });
 
   }
-
 }
